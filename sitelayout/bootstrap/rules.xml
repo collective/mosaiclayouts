@@ -1,0 +1,23 @@
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <replace css:theme-children="ul.navbar-nav"
+             css:content-children="ul#portal-globalnav" />
+
+    <xsl:template match="li[@class='selected']">
+      <xsl:copy>
+        <xsl:attribute name="class"><xsl:text>active</xsl:text></xsl:attribute>
+        <xsl:apply-templates select="node()"/>
+      </xsl:copy>
+    </xsl:template>
+
+    <replace css:theme-children="a.navbar-brand"
+             css:content-children="#portal-logo" />
+
+    <copy css:theme="a.navbar-brand"
+          css:content="a#portal-logo"
+          attributes="href title"/>
+
+</rules>
