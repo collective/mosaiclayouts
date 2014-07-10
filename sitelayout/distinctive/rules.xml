@@ -3,10 +3,11 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+    <copy css:theme-children="#logo a"
+          css:content="a#portal-logo"
+          attributes="href title" />
+
     <replace css:theme-children="ul#menu"
              css:content-children="ul#portal-globalnav" />
-
-    <replace css:theme-children="#logo"
-             css:content="#portal-logo" />
 
 </rules>
